@@ -28,3 +28,11 @@ class ScubaTank:
 
     def __str__(self):
         return "Tank" + self.label + ":" + str(self.__bar) + "bar"
+
+def transfer_air(source,target,amount):
+    before = source.get_bar()
+    source.release(amount)
+    if amount >0 and source.get_bar() == before - amount:
+        target.fill(amount)
+        
+        
